@@ -12,8 +12,7 @@ NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 2 --division will now spawn at re
 NDefines.NMilitary.BASE_CAPTURE_EQUIPMENT_RATIO = 0.000 --removes equipment gain from combat
 NDefines.NMilitary.TRAINING_ATTRITION = 0 --Removed training attrition
 NDefines.NMilitary.STRATEGIC_SPEED_BASE = 10.0 --planes relocate faster
---Air Changes
-NDefines.NAir.AIR_WING_MAX_SIZE = 800        
+--Air Changes     
 NDefines.NAir.AIR_DEPLOYMENT_DAYS = 0        
 NDefines.NAir.MISSION_COMMAND_POWER_COSTS = {
     0.0, -- AIR_SUPERIORITY
