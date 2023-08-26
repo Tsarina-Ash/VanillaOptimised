@@ -1,0 +1,12 @@
+add_namespace = customkatty
+
+news_event = { #Starting event
+	id = customkatty.1
+	title = customkatty.1.t
+	desc = customkatty.1.desc
+	picture = GFX_news_event_001
+	is_triggered_only = yes
+	option = {
+		name = customkatty.1.a
+	}
+}

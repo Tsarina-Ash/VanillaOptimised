@@ -150,7 +150,7 @@ buildings = {
 		local_resources_rubber = 1 # May use local_resources_ + any resource name
 		refinery = yes
 		max_level = 3 # This is the max unlock level
-		shares_slots = no
+		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
 
@@ -163,7 +163,7 @@ buildings = {
 		base_cost = 5000
 		icon_frame = 14
 		#max_level = 1
-		shares_slots = no
+		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
 		fuel_silo = yes
@@ -204,7 +204,7 @@ buildings = {
 		nuclear_reactor = yes
 		nuclear_production_factor = 1
 		max_level = 1 # This is the max unlock level
-		shares_slots = no
+		shares_slots = yes
 		value = 10
 		infrastructure_construction_effect = yes
 	}

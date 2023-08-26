@@ -1,0 +1,556 @@
+on_actions = {
+
+	#host tool#
+
+	on_startup = {
+		effect = {
+			if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = GER}}
+				set_variable={host = GER.id}
+			}
+			if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = PRC}}
+				set_variable={host = PRC.id}
+			}	
+			if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = CHI}}
+				set_variable={host = CHI.id}
+			}					
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = ITA}}
+				set_variable={host = ITA.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = ROM}}
+				set_variable={host = ROM.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = HUN}}
+				set_variable={host = HUN.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = BUL}}
+				set_variable={host = BUL.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = FIN}}
+				set_variable={host = FIN.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = ENG}}
+				set_variable={host = ENG.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = USA}}
+				set_variable={host = USA.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = CAN}}
+				set_variable={host = CAN.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = SAF}}
+				set_variable={host = SAF.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = RAJ}}
+				set_variable={host = RAJ.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = AST}}
+				set_variable={host = AST.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = NZL}}
+				set_variable={host = NZL.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = JAP}}
+				set_variable={host = JAP.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = SOV}}
+				set_variable={host = SOV.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = FRA}}
+				set_variable={host = FRA.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = BRA}}
+				set_variable={host = BRA.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = MEX}}
+				set_variable={host = MEX.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = IRE}}
+				set_variable={host = IRE.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = SPR}}
+				set_variable={host = SPR.id}
+			}
+			else_if = {
+				limit = {has_game_rule = {rule = hosttool_game_rule option = OFF}}
+				set_global_flag = HMM_no_hosttool
+			}
+			if = { # i hate errors
+				limit = {
+					NOT = { has_global_flag = HMM_no_hosttool }
+				}
+				var:host = {
+					set_variable = { marked_states = 0 }
+					set_variable = { prod_effi = 30 }
+					set_variable = { prod_type = 0 }
+					set_country_flag = host
+				}
+			}
+		}
+	}
+
+	#custom optimization#
+	
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization
+						option = ALL_OF_SOUTH_AMERICA
+					}
+				}
+				NEU = {
+					annex_country = {
+						target = VEN
+					}
+					annex_country = {
+						target = COL
+					}
+					annex_country = {
+						target = ECU
+					}
+					annex_country = {
+						target = PRU
+					}
+					annex_country = {
+						target = CHL
+					}
+					annex_country = {
+						target = BOL
+					}
+					annex_country = {
+						target = ARG
+					}
+					annex_country = {
+						target = PAR
+					}
+					annex_country = {
+						target = URG
+					}
+					annex_country = {
+						target = BRA
+					}								
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+					remove_core_of = VEN
+					remove_core_of = COL
+					remove_core_of = ECU
+					remove_core_of = PRU
+					remove_core_of = CHL	
+					remove_core_of = BOL		
+					remove_core_of = PAR	
+					remove_core_of = URG	
+					remove_core_of = BRA	
+					remove_core_of = ARG				
+					}	
+				}
+
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}				
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization
+						option = ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL
+					}
+				}
+
+				NEU = {
+					annex_country = {
+						target = VEN
+					}
+					annex_country = {
+						target = COL
+					}
+					annex_country = {
+						target = ECU
+					}
+					annex_country = {
+						target = PRU
+					}
+					annex_country = {
+						target = CHL
+					}
+					annex_country = {
+						target = BOL
+					}
+					annex_country = {
+						target = ARG
+					}
+					annex_country = {
+						target = PAR
+					}
+					annex_country = {
+						target = URG
+					}					
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+					remove_core_of = VEN
+					remove_core_of = COL
+					remove_core_of = ECU
+					remove_core_of = PRU
+					remove_core_of = CHL	
+					remove_core_of = BOL		
+					remove_core_of = PAR	
+					remove_core_of = URG	
+					remove_core_of = ARG				
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}					
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization
+						option = ALL_OF_SOUTH_AMERICA_MINUS_ARGENTINA
+					}
+				}
+				NEU = {
+					annex_country = {
+						target = VEN
+					}
+					annex_country = {
+						target = COL
+					}
+					annex_country = {
+						target = ECU
+					}
+					annex_country = {
+						target = PRU
+					}
+					annex_country = {
+						target = CHL
+					}
+					annex_country = {
+						target = BOL
+					}
+					annex_country = {
+						target = PAR
+					}
+					annex_country = {
+						target = URG
+					}
+					annex_country = {
+						target = BRA
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+					remove_core_of = VEN
+					remove_core_of = COL
+					remove_core_of = ECU
+					remove_core_of = PRU
+					remove_core_of = CHL	
+					remove_core_of = BOL		
+					remove_core_of = PAR	
+					remove_core_of = URG	
+					remove_core_of = BRA
+					remove_core_of = GYA
+					remove_core_of = SUR					
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}					
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization
+						option = ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL_AND_ARGENTINA
+					}
+				}			
+
+				NEU = {
+					annex_country = {
+						target = VEN
+					}
+					annex_country = {
+						target = COL
+					}
+					annex_country = {
+						target = ECU
+					}
+					annex_country = {
+						target = PRU
+					}
+					annex_country = {
+						target = CHL
+					}
+					annex_country = {
+						target = BOL
+					}
+					annex_country = {
+						target = PAR
+					}
+					annex_country = {
+						target = URG
+					}							
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+					remove_core_of = VEN
+					remove_core_of = COL
+					remove_core_of = ECU
+					remove_core_of = PRU
+					remove_core_of = CHL	
+					remove_core_of = BOL		
+					remove_core_of = PAR	
+					remove_core_of = URG					
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}						
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization2
+						option = ALL_OF_CENTRAL_AMERICA
+					}
+				}		
+					remove_core_of = GUA
+					remove_core_of = ELS
+					remove_core_of = HON
+					remove_core_of = NIC
+					remove_core_of = COS	
+					remove_core_of = PAN		
+					remove_core_of = MEX
+				NEU = {
+					annex_country = {
+						target = GUA
+					}
+					annex_country = {
+						target = ELS
+					}
+					annex_country = {
+						target = HON
+					}
+					annex_country = {
+						target = NIC
+					}
+					annex_country = {
+						target = COS
+					}
+					annex_country = {
+						target = PAN
+					}
+					annex_country = {
+						target = MEX
+					}		
+				}			
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+					remove_core_of = GUA
+					remove_core_of = ELS
+					remove_core_of = HON
+					remove_core_of = NIC
+					remove_core_of = COS	
+					remove_core_of = PAN		
+					remove_core_of = MEX
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization2
+						option = ALL_OF_CENTRAL_AMERICA_MINUS_MEXICO
+					}
+				}			
+					remove_core_of = GUA
+					remove_core_of = ELS
+					remove_core_of = HON
+					remove_core_of = NIC
+					remove_core_of = COS	
+					remove_core_of = PAN
+				NEU = {
+					annex_country = {
+						target = GUA
+					}
+					annex_country = {
+						target = ELS
+					}
+					annex_country = {
+						target = HON
+					}
+					annex_country = {
+						target = NIC
+					}
+					annex_country = {
+						target = COS
+					}
+					annex_country = {
+						target = PAN
+					}				
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						remove_core_of = GUA
+						remove_core_of = ELS
+						remove_core_of = HON
+						remove_core_of = NIC
+						remove_core_of = COS	
+						remove_core_of = PAN					
+					}	
+				}
+				NEU = {
+					every_state = {
+						limit = {
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}					
+			}	
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = game_optimization3
+						option = ALL_OF_THE_CARRIBEAN
+					}
+				}		
+				NEU = {
+					annex_country = {
+						target = DOM
+					}
+					annex_country = {
+						target = HAI
+					}
+					annex_country = {
+						target = CUB
+					}						
+				}
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						remove_core_of = DOM
+						remove_core_of = HAI	
+						remove_core_of = CUB					
+					}	
+				}
+				
+				NEU = {
+					every_state = {
+						limit = {		
+							is_controlled_by = NEU
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = NEU }
+							}
+							add_core_of = NEU
+						}
+					}	
+				}	
+			}
+	}
+}

@@ -1,0 +1,234 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	required_dlc = "Name of the Required DLC"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	group = "TEXT_KEY_FOR_GROUP"					# Used for filtering. A single rule can be in multiple groups 
+#	icon = gfx_option_token							# Optional icon
+#	option = {										# Unless other specified, the first option is the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		allow_achievements = no						# Achievements cannot be earned if one or more game rules are set to an option that has this property set to no.
+#													# If not specified, this is set to yes for default options and no for all other options.
+#	}
+#	default = {										# Specify an option with the "default" token to override the behavior of treating the first option as the default.
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		...
+#	}
+# }
+
+#optimization  
+
+game_optimization = {
+	name = "Game_Optimization"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = ALL_OF_SOUTH_AMERICA
+		text = "RULE_OPTION_ALL_OF_SOUTH_AMERICA"
+		desc = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_DESC"
+	}
+	option = { 
+		name = ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL
+		text = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL"
+		desc = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL_DESC"
+	}
+	option = { 
+		name = ALL_OF_SOUTH_AMERICA_MINUS_ARGENTINA
+		text = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_MINUS_ARGENTINA"
+		desc = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_MINUS_ARGENTINA_DESC"
+	}
+	option = {
+		name = ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL_AND_ARGENTINA
+		text = "RULE_OPTION_CHINA_ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL_AND_ARGENTINA"
+		desc = "RULE_OPTION_ALL_OF_SOUTH_AMERICA_MINUS_BRAZIL_AND_ARGENTINA_DESC"
+	}
+}
+
+game_optimization2 = {
+	name = "Game_Optimization2"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = ALL_OF_CENTRAL_AMERICA
+		text = "RULE_OPTION_ALL_OF_CENTRAL_AMERICA"
+		desc = "RULE_OPTION_ALL_OF_CENTRAL_AMERICA_DESC"
+	}
+	option = {
+		name = ALL_OF_CENTRAL_AMERICA_MINUS_MEXICO
+		text = "RULE_OPTION_ALL_OF_CENTRAL_AMERICA_MINUS_MEXICO"
+		desc = "RULE_OPTION_ALL_OF_CENTRAL_AMERICA_MINUS_MEXICO_DESC"
+	}
+}
+
+game_optimization3 = {
+	name = "Game_Optimization3"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = ALL_OF_THE_CARRIBEAN
+		text = "RULE_OPTION_ALL_OF_THE_CARRIBEAN"
+		desc = "RULE_OPTION_ALL_OF_THE_CARRIBEAN_DESC"
+	}
+}
+#host tool
+
+hosttool_game_rule = {
+	name = "HOSTTOOL_GAME_RULE"
+	group = "Hosttool"
+	icon = "GFX_decision_category_ger_reichskommissariats"
+
+	default = {
+		name = OFF
+		text = "HOSTTOOL_NONE"
+		desc = ""
+	}
+	option = {
+		name = GER
+		text = "Germany"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = PRC
+		text = "Peoples Republic Of China"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = CHI
+		text = "Republic Of China"
+		desc = ""
+		allow_achievements = yes
+	}	
+	option = {
+		name = ITA
+		text = "Italy"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = ROM
+		text = "Romania"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = HUN
+		text = "Hungary"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = BUL
+		text = "Bulgaria"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = FIN
+		text = "Finland"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = ENG
+		text = "United Kingdom"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = USA
+		text = "USA"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = CAN
+		text = "Canada"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = SAF
+		text = "South Africa"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = RAJ
+		text = "India"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = AST
+		text = "Australia"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = NZL
+		text = "New Zealand"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = JAP
+		text = "Japan"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = SOV
+		text = "Russia"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = FRA
+		text = "France"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = BRA
+		text = "Brazil"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = MEX
+		text = "Mexico"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = IRE
+		text = "Ireland"
+		desc = ""
+		allow_achievements = yes
+	}
+	option = {
+		name = SPR
+		text = "Spain"
+		desc = ""
+		allow_achievements = yes
+	}
+}
