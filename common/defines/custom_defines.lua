@@ -1,7 +1,6 @@
 ---IndustryModifiers
 NDefines.NBuildings.MAX_SHARED_SLOTS = 50
 NDefines.NBuildings.MAX_BUILDING_LEVELS = 50
-BASE_FACTORY_SPEED_NAV = 3.5 --ships build faster
 ---BegoneClouds
 NDefines_Graphics.NGraphics.DRAW_FOW_CUTOFF = 0;  --removes fog
 NDefines_Graphics.NGraphics.DRAW_FOW_FADE_LENGTH = 0;  --removes fog
@@ -32,7 +31,7 @@ NDefines.NAir.MISSION_COMMAND_POWER_COSTS = {
     0.0, -- MISSION_RECON
 }
 --Special Forces Cap Removed
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 9000
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 36
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.00
 --Naval Training Changes--
 NDefines.NNavy.TRAINING_ACCIDENT_CRITICAL_HIT_CHANCES = 0 --How do you crit yourself o.o
@@ -76,9 +75,7 @@ NDefines.NNavy.CONVOY_LOSS_HISTORY_TIMEOUT_MONTHS = 1 --less bloat
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0
 NDefines.NProduction.EQUIPMENT_MODULE_CONVERT_XP_COST = 0
-NDefines.NProduction.EQUIPMENT_MODULE_REMOVE_XP_COST = 0
-NDefines.NMilitary.LAND_EQUIPMENT_BASE_COST = 0
-NDefines.NMilitary.LAND_EQUIPMENT_RAMP_COST = 0					
+NDefines.NProduction.EQUIPMENT_MODULE_REMOVE_XP_COST = 0			
 NDefines.NMilitary.NAVAL_EQUIPMENT_BASE_COST = 0
 NDefines.NMilitary.NAVAL_EQUIPMENT_RAMP_COST = 0
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0
@@ -89,7 +86,7 @@ NDefines.NProduction.BASE_LICENSE_IC_COST = 0
 NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0
 --Finish Peacedeals Fast
 NDefines.NDiplomacy.PEACE_SCORE_PER_PASS = 100
---Attache Changes
+--Attache Changes (AI Accepts Attaches 100% Of Time)
 NDefines.NAI.DIPLOMACY_ACCEPT_ATTACHE_BASE = 100
 NDefines.NAI.DIPLOMACY_ACCEPT_ATTACHE_OPINION_TRASHHOLD = 0
 NDefines.NDiplomacy.BASE_SEND_ATTACHE_COST = 50
