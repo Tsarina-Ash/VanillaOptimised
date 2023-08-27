@@ -19,10 +19,10 @@ defined_text = { # global
 		trigger = {
 			has_country_flag = hosttool_enabled
 		}
-		localization_key = transfer_states_off
+		localization_key = transfer_states_off_2
 	}
 	text = {
-		localization_key = transfer_states_on
+		localization_key = transfer_states_on_2
 	}
 }
 
